@@ -25,6 +25,7 @@
     filter: invert(90%) hue-rotate(180deg) brightness(1.1) contrast(1.1);
 }
 
+
 .h-96 {
   height: 44rem !important; /* 👈 Cambia este valor según necesites */
 }
@@ -41,6 +42,16 @@
   .h-96 {
     height: 24rem !important; /* Puedes probar 20rem, 22rem, etc. */
   }
+
+  .mb-8 {
+  margin-top: 60px !important; /* 👈 Cambia este valor según necesites */
+
+}
+.homeservices {
+  margin-bottom: 60px !important; /* 👈 Cambia este valor según necesites */
+
+}
+
 }
 
 
@@ -82,10 +93,3 @@
     opacity: 1;
     transform: none;
 }
-
-
-
-
-
-
-
