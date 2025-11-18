@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios - Estudio Murua | Abogacía Penalista Especializada</title>
-    <meta name="description" content="Servicios de abogacía penalista del Estudio Murua. Defensa penal, asesoría legal y representación especializada en derecho penal.">
+    <title>Servicios - Estudio Murúa | Abogacía Penalista Especializada</title>
+    <meta name="description" content="Servicios de abogacía penalista del Estudio Murúa. Defensa penal, asesoría legal y representación especializada en derecho penal.">
     <meta name="keywords" content="servicios legales, abogacía penal, defensa penal, asesoría legal, representación judicial, derecho penal">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+    <script src="tailwin.js"></script>
+   <link rel="stylesheet" href="estilos.css">
+   <link rel="stylesheet" href="servicios.css">
+   <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'yellow-400': '#fbbf24',
-                        'yellow-500': '#eab308',
-                        'yellow-600': '#ca8a04',
+                        // Colores Dorados Oscuros / Latón
+                        'yellow-400': '#B99B5A', // Latón Viejo (Claro)
+                        'yellow-500': '#876A2E', // Bronce Oscuro (Principal)
+                        'yellow-600': '#5E4B20', // Cobre Oscuro (Profundo)
                     }
                 }
             }
@@ -31,13 +34,15 @@
         }
         
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #fbbf24, #eab308, #ca8a04);
+            /* NUEVO GRADIENTE DE DORADO OSCURO */
+            background: linear-gradient(to bottom, #B99B5A, #876A2E, #5E4B20);
             border-radius: 4px;
         }
         
         /* Gradient text */
         .gradient-text {
-            background: linear-gradient(to right, #fbbf24, #eab308, #ca8a04);
+            /* NUEVO GRADIENTE DE DORADO OSCURO */
+            background: linear-gradient(to right, #B99B5A, #876A2E, #5E4B20);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -45,36 +50,42 @@
         
         /* Button hover effects */
         .btn-gold {
-            background: linear-gradient(to right, #eab308, #ca8a04);
+            /* NUEVO GRADIENTE DE DORADO OSCURO */
+            background: linear-gradient(to right, #876A2E, #5E4B20);
             transition: all 0.3s ease;
         }
         
         .btn-gold:hover {
-            background: linear-gradient(to right, #fbbf24, #eab308);
+            /* NUEVO GRADIENTE DE DORADO OSCURO */
+            background: linear-gradient(to right, #B99B5A, #876A2E);
             transform: scale(1.05);
         }
         
         .btn-outline {
-            border: 2px solid #eab308;
-            color: #eab308;
+            /* COLOR DORADO OSCURO PRINCIPAL */
+            border: 2px solid #876A2E;
+            color: #876A2E;
             transition: all 0.3s ease;
         }
         
         .btn-outline:hover {
-            background: #eab308;
+            background: #876A2E;
             color: #000;
         }
         
         /* Card hover effects */
         .card-hover {
             transition: all 0.3s ease;
-            border: 1px solid rgba(234, 179, 8, 0.2);
+            /* COLOR DORADO OSCURO PRINCIPAL CON BAJA OPACIDAD */
+            border: 1px solid rgba(135, 106, 46, 0.2);
         }
         
         .card-hover:hover {
-            border-color: rgba(234, 179, 8, 0.4);
+            /* COLOR DORADO OSCURO PRINCIPAL CON MEDIA OPACIDAD */
+            border-color: rgba(135, 106, 46, 0.4);
             transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(234, 179, 8, 0.15);
+            /* SOMBRA DE CAJA CON DORADO OSCURO */
+            box-shadow: 0 20px 40px rgba(135, 106, 46, 0.15);
         }
         
         /* Navigation effects */
@@ -83,17 +94,18 @@
         }
         
         .nav-link:hover {
-            color: #eab308;
+            color: #876A2E; /* COLOR DORADO OSCURO PRINCIPAL */
         }
         
         .nav-link.active {
-            color: #eab308 !important;
+            color: #876A2E !important; /* COLOR DORADO OSCURO PRINCIPAL */
         }
         
         /* Glow animation */
         @keyframes glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(234, 179, 8, 0.3); }
-            50% { box-shadow: 0 0 30px rgba(234, 179, 8, 0.5); }
+            /* COLOR DORADO OSCURO PRINCIPAL */
+            0%, 100% { box-shadow: 0 0 20px rgba(135, 106, 46, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(135, 106, 46, 0.5); }
         }
         
         .glow-animation {
@@ -133,7 +145,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(234, 179, 8, 0.1), transparent);
+            /* COLOR DORADO OSCURO PRINCIPAL */
+            background: linear-gradient(90deg, transparent, rgba(135, 106, 46, 0.1), transparent);
             transition: left 0.5s ease;
         }
         
@@ -141,20 +154,56 @@
             left: 100%;
         }
     </style>
+
+<script>
+    // Fade-in global al cargar
+    window.addEventListener("load", () => {
+        document.body.classList.add("loaded");
+    });
+
+    // Fade-in en scroll con activación más temprana
+    document.addEventListener("DOMContentLoaded", () => {
+        const faders = document.querySelectorAll(".fade-in-section");
+
+        const options = {
+            threshold: 0.0,              // antes era 0.2 → ahora se activa con menos visibilidad
+            rootMargin: "0px 0px -100px 0px" 
+            // este margen negativo hace que se active 100px antes de que el elemento esté en pantalla completa
+        };
+
+        const appearOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    });
+</script>
+
+
 </head>
 <body class="min-h-screen bg-gradient-to-b from-gray-950 via-black to-gray-900">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-yellow-500/20">
+<nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-yellow-500/20 pt-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="index.html" class="text-xl font-bold gradient-text hover:opacity-80 transition-opacity">
-                        ESTUDIO MURUA
-                    </a>
-                </div>
+               
+               
+                                     <div class="flex-shrink-0 nav-logo">
+    <a href="index.html" class="block">
+        <img 
+            src="logoextendido.png" 
+            alt="Estudio Murúa - Abogados Especialistas en Derecho Penal"
+            class="h-8 md:h-14 w-auto object-contain"
+        />
+    </a>
+</div>
 
-                <!-- Desktop Navigation -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="index.html" class="nav-link text-gray-300 px-3 py-2 text-sm font-medium">
@@ -166,13 +215,15 @@
                         <a href="servicios.html" class="nav-link text-yellow-500 px-3 py-2 text-sm font-medium">
                             SERVICIOS
                         </a>
+                         <a href="casos.html" class="nav-link text-gray-300 px-3 py-2 text-sm font-medium">
+                            CASOS
+                        </a>
                         <a href="contacto.html" class="nav-link text-gray-300 px-3 py-2 text-sm font-medium">
                             CONTACTO
                         </a>
                     </div>
                 </div>
 
-                <!-- Mobile menu button -->
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-gray-300 hover:text-yellow-500 p-2">
                         <svg id="menu-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -186,7 +237,6 @@
             </div>
         </div>
 
-        <!-- Mobile Navigation -->
         <div id="mobile-menu" class="md:hidden bg-black/95 backdrop-blur-md border-b border-yellow-500/20 hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="index.html" class="mobile-nav-link text-gray-300 hover:text-yellow-500 block px-3 py-2 text-base font-medium w-full text-left">
@@ -198,6 +248,9 @@
                 <a href="servicios.html" class="mobile-nav-link text-gray-300 hover:text-yellow-500 block px-3 py-2 text-base font-medium w-full text-left">
                     SERVICIOS
                 </a>
+                      <a href="casos.html" class="mobile-nav-link text-gray-300 hover:text-yellow-500 block px-3 py-2 text-base font-medium w-full text-left">
+                    CASOS
+                </a>
                 <a href="contacto.html" class="mobile-nav-link text-gray-300 hover:text-yellow-500 block px-3 py-2 text-base font-medium w-full text-left">
                     CONTACTO
                 </a>
@@ -205,9 +258,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="relative h-96 flex items-center justify-center overflow-hidden">
-        <!-- Background Image with Overlay -->
         <div class="absolute inset-0">
             <img
                 src="servicios-header.jpg"
@@ -217,11 +268,9 @@
             />
             <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900/95 to-black opacity-90"></div>
             <div class="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-60"></div>
-            <!-- Fallback gradient if image doesn't load -->
             <div class="absolute inset-0 bg-gradient-to-br from-gray-950 via-black to-gray-900 hidden" style="display: none;"></div>
         </div>
         
-        <!-- Background Pattern -->
         <div class="absolute inset-0 opacity-10">
             <div class="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-600/20 to-transparent"></div>
         </div>
@@ -229,7 +278,7 @@
         <div class="relative z-10 text-center px-4 max-w-6xl mx-auto">
             <div class="slide-in">
                 <h1 class="text-4xl md:text-6xl font-bold mb-4 gradient-text">
-                    Nuestros Servicios
+                    NUESTROS SERVICIOS
                 </h1>
                 <div class="w-24 h-1 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 mx-auto mb-6"></div>
                 <p class="text-lg md:text-xl text-white font-light max-w-3xl mx-auto leading-relaxed">
@@ -239,11 +288,9 @@
         </div>
     </section>
 
-    <!-- Main Services -->
-    <section id="main-content" class="py-16 px-4">
+    <section id="main-content" class="py-16 px-4 fade-in-section">
         <div class="max-w-6xl mx-auto">
             <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <!-- Derecho Penal -->
                 <div class="feature-card bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl card-hover">
                     <div class="relative mb-6">
                         <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-2xl blur-xl"></div>
@@ -260,7 +307,11 @@
                     <ul class="space-y-3 text-gray-300 mb-6">
                         <li class="flex items-start gap-2">
                             <span class="text-yellow-500 mt-1 flex-shrink-0">✓</span>
-                            <span>Delitos contra la propiedad</span>
+                            <span>Delitos de narcotráfico (Ley 23.737)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-yellow-500 mt-1 flex-shrink-0">✓</span>
+                            <span>Delitos contra propiedad, las personas</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="text-yellow-500 mt-1 flex-shrink-0">✓</span>
@@ -268,11 +319,11 @@
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="text-yellow-500 mt-1 flex-shrink-0">✓</span>
-                            <span>Delitos contra las personas</span>
+                            <span>Crimen organizado</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="text-yellow-500 mt-1 flex-shrink-0">✓</span>
-                            <span>Crimen organizado</span>
+                            <span>Delito sexuales</span>
                         </li>
                     </ul>
                     <a href="contacto.html" class="btn-outline w-full px-6 py-3 font-semibold rounded-lg inline-block text-center">
@@ -280,7 +331,6 @@
                     </a>
                 </div>
 
-                <!-- Asesoría Legal -->
                 <div class="feature-card bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl card-hover">
                     <div class="relative mb-6">
                         <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-2xl blur-xl"></div>
@@ -317,7 +367,6 @@
                     </a>
                 </div>
 
-                <!-- Representación -->
                 <div class="feature-card bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl card-hover">
                     <div class="relative mb-6">
                         <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-2xl blur-xl"></div>
@@ -355,8 +404,7 @@
                 </div>
             </div>
 
-            <!-- Specialized Services -->
-            <div class="mb-16">
+            <div class="mb-16 fade-in-section">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold gradient-text mb-4">
                         Servicios Especializados
@@ -375,7 +423,7 @@
                             </svg>
                         </div>
                         <h4 class="text-white font-semibold mb-2">Derecho Penal Económico</h4>
-                        <p class="text-gray-400 text-sm">Delitos financieros y corporativos</p>
+                        <p class="text-gray-400 text-sm">Delitos financieros y corporativos.</p>
                     </div>
                     
                     <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl card-hover text-center">
@@ -384,8 +432,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                             </svg>
                         </div>
-                        <h4 class="text-white font-semibold mb-2">Derecho Penal Internacional</h4>
-                        <p class="text-gray-400 text-sm">Cooperación judicial internacional</p>
+                        <h4 class="text-white font-semibold mb-2">Delitos de Narcotráfico</h4>
+                        <p class="text-gray-400 text-sm">Intervención en causas del fuero federal experiencia acreditada.</p>
                     </div>
                     
                     <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl card-hover text-center">
@@ -394,8 +442,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                             </svg>
                         </div>
-                        <h4 class="text-white font-semibold mb-2">Delitos Corporativos</h4>
-                        <p class="text-gray-400 text-sm">Responsabilidad penal de personas jurídicas</p>
+                        <h4 class="text-white font-semibold mb-2">Delitos sexuales</h4>
+                        <p class="text-gray-400 text-sm">Representación estratégica e interdisciplinaria.</p>
                     </div>
                     
                     <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl card-hover text-center">
@@ -410,8 +458,7 @@
                 </div>
             </div>
 
-            <!-- Process Section -->
-            <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-yellow-500/20">
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-yellow-500/20 fade-in-section">
                 <h2 class="text-2xl md:text-3xl font-bold gradient-text mb-8 text-center">
                     Nuestro Proceso de Defensa
                 </h2>
@@ -430,7 +477,7 @@
                             <span class="text-black font-bold text-xl">2</span>
                         </div>
                         <h4 class="text-white font-semibold mb-2">Estrategia Defensiva</h4>
-                        <p class="text-gray-400 text-sm">Desarrollo de la mejor estrategia legal</p>
+                        <p class="text-gray-400 text-sm">Desarrollo de la mejor estrategia penal</p>
                     </div>
                     
                     <div class="text-center">
@@ -438,7 +485,7 @@
                             <span class="text-black font-bold text-xl">3</span>
                         </div>
                         <h4 class="text-white font-semibold mb-2">Ejecución</h4>
-                        <p class="text-gray-400 text-sm">Implementación de la defensa legal</p>
+                        <p class="text-gray-400 text-sm">Implementación de la defensa penal</p>
                     </div>
                     
                     <div class="text-center">
@@ -446,40 +493,36 @@
                             <span class="text-black font-bold text-xl">4</span>
                         </div>
                         <h4 class="text-white font-semibold mb-2">Seguimiento</h4>
-                        <p class="text-gray-400 text-sm">Acompañamiento continuo del caso</p>
+                        <p class="text-gray-400 text-sm">Control de la defensa.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-16 px-4 bg-gradient-to-b from-gray-900 to-black">
+    <section class="py-16 px-4 bg-gradient-to-b from-gray-900 to-black fade-in-section">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl md:text-4xl font-bold gradient-text mb-6">
-                Protege tus Derechos Hoy
+              ELIGE TU DEFENSA PENAL.
             </h2>
             <p class="text-gray-300 mb-8 text-lg">
                 No esperes a que sea demasiado tarde. Contacta ahora para una consulta confidencial.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="contacto.html" class="btn-gold px-8 py-4 text-black font-semibold rounded-lg inline-block text-center">
-                    Consulta Gratuita
+                    Contáctanos
                 </a>
-                <a href="tel:+5411XXXXXXX" class="btn-outline px-8 py-4 font-semibold rounded-lg inline-block text-center">
-                    Llamar Ahora
-                </a>
+               
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-8 px-4 bg-black border-t border-yellow-500/20">
         <div class="max-w-6xl mx-auto">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <h3 class="text-xl font-bold gradient-text mb-4">
-                        ESTUDIO MURUA
+                        ESTUDIO MURÚA
                     </h3>
                     <p class="text-gray-400 text-sm">
                         Defensa Penalista Especializada
@@ -505,15 +548,15 @@
                 <div>
                     <h4 class="text-white font-semibold mb-4">Contacto</h4>
                     <ul class="space-y-2">
-                        <li class="text-gray-400 text-sm">+54 11 XXXX-XXXX</li>
-                        <li class="text-gray-400 text-sm">info@estudiomurua.com</li>
-                        <li class="text-gray-400 text-sm">Buenos Aires, Argentina</li>
+                        <a href="https://w.app/nuol4l" target="_blank"><li class="text-gray-400 text-sm">+54 11-5313-7692</li></a>
+                        <li class="text-gray-400 text-sm">info@muruapenalistas.com.ar</li>
+                        <li class="text-gray-400 text-sm">Uruguay N° 560, Piso 4 of. 46. C.A.B.A. Presidente Perón 1282 piso 10 “A”, San Miguel.</li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-6 text-center">
                 <p class="text-gray-500 text-sm">
-                    © 2024 Estudio Murua. Todos los derechos reservados.
+                    © 2025 Estudio Murúa. Todos los derechos reservados.
                 </p>
             </div>
         </div>

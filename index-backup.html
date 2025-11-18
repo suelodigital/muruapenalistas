@@ -14,16 +14,14 @@
             theme: {
                 extend: {
                     colors: {
-                        // NUEVOS DORADOS OSCUROS / LATÓN (como el logo)
-                        'yellow-400': '#B99B5A', // Latón Viejo (Claro)
-                        'yellow-500': '#876A2E', // Bronce Oscuro (Principal)
-                        'yellow-600': '#5E4B20', // Cobre Oscuro (Profundo)
+                        'yellow-400': '#fbbf24',
+                        'yellow-500': '#eab308',
+                        'yellow-600': '#ca8a04',
                     }
                 }
             }
         }
     </script>
-    
     <style>
         /* Smooth scrolling */
         html {
@@ -40,15 +38,13 @@
         }
         
         ::-webkit-scrollbar-thumb {
-            /* Nuevo degradado de dorado más oscuro */
-            background: linear-gradient(to bottom, #B99B5A, #876A2E, #5E4B20);
+            background: linear-gradient(to bottom, #fbbf24, #eab308, #ca8a04);
             border-radius: 4px;
         }
         
         /* Gradient text */
         .gradient-text {
-            /* Nuevo degradado de dorado más oscuro */
-            background: linear-gradient(to right, #B99B5A, #876A2E, #5E4B20);
+            background: linear-gradient(to right, #fbbf24, #eab308, #ca8a04);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -56,40 +52,34 @@
         
         /* Button hover effects */
         .btn-gold {
-            /* Color base del botón */
-            background: linear-gradient(to right, #876A2E, #5E4B20);
+            background: linear-gradient(to right, #eab308, #ca8a04);
             transition: all 0.3s ease;
         }
         
         .btn-gold:hover {
-            /* Efecto hover: un poco más brillante pero dentro de la gama oscura */
-            background: linear-gradient(to right, #B99B5A, #876A2E);
+            background: linear-gradient(to right, #fbbf24, #eab308);
             transform: scale(1.05);
         }
         
         .btn-outline {
-            /* Borde y color de texto */
-            border: 2px solid #876A2E;
-            color: #876A2E;
+            border: 2px solid #eab308;
+            color: #eab308;
             transition: all 0.3s ease;
         }
         
         .btn-outline:hover {
-            /* Efecto hover: fondo con el tono serio */
-            background: #876A2E;
+            background: #eab308;
             color: #000;
         }
         
         /* Card hover effects */
         .card-hover {
             transition: all 0.3s ease;
-            /* El rgba usa el color #876A2E (tono medio serio) */
-            border: 1px solid rgba(135, 106, 46, 0.2); 
+            border: 1px solid rgba(234, 179, 8, 0.2);
         }
         
         .card-hover:hover {
-            /* El rgba usa el color #876A2E (tono medio serio) */
-            border-color: rgba(135, 106, 46, 0.4);
+            border-color: rgba(234, 179, 8, 0.4);
             transform: translateY(-2px);
         }
         
@@ -99,198 +89,24 @@
         }
         
         .nav-link:hover {
-            color: #876A2E; /* Tono medio serio */
+            color: #eab308;
         }
         
         .nav-link.active {
-            color: #876A2E !important; /* Tono medio serio */
+            color: #eab308 !important;
         }
-
-        /* Ocultar scrollbar pero mantener scroll */
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-
-        /* Estilos para las tarjetas de reviews */
-        .review-card {
-            min-width: 300px;
-            max-width: 350px;
-            background: linear-gradient(145deg, #1f2937, #111827);
-            /* Actualización de borde usando #876A2E (135, 106, 46) */
-            border: 1px solid rgba(135, 106, 46, 0.2); 
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
-            position: relative;
-            flex-shrink: 0;
-            snap-align: start;
-            cursor: grab;
-        }
-        .review-card:hover {
-            transform: translateY(-6px) scale(1.02);
-            /* Actualización de borde usando #876A2E (135, 106, 46) */
-            border-color: rgba(135, 106, 46, 0.4);
-            /* Actualización de sombra de caja usando #876A2E (135, 106, 46) */
-            box-shadow: 0 12px 30px rgba(135, 106, 46, 0.15); 
-            z-index: 10;
-        }
-        .review-card:active {
-            cursor: grabbing;
-        }
-
-        .review-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-
-        .avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            /* Nuevo degradado del avatar: #B99B5A, #876A2E */
-            background: linear-gradient(135deg, #B99B5A, #876A2E); 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: black;
-            font-weight: bold;
-            font-size: 18px;
-            margin-right: 12px;
-            flex-shrink: 0;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-        }
-
-        .review-name {
-            font-weight: bold;
-            color: white;
-            margin-right: 8px;
-        }
-
-        .review-date {
-            font-size: 0.75rem;
-            color: #9ca3af;
-        }
-
-        .stars {
-            color: #B99B5A; /* Color de las estrellas: Latón Viejo (Claro) */
-            font-size: 1rem;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-        }
-
-        .review-text {
-            color: #d1d5db;
-            line-height: 1.5;
-            font-size: 0.875rem;
-            margin-bottom: 12px;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-        }
-
-        .read-more {
-            color: #876A2E; /* Color del "Leer más": Bronce Oscuro (Principal) */
-            font-size: 0.75rem;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: underline;
-            margin-top: 4px;
-            transition: color 0.2s ease;
-        }
-        .read-more:hover {
-            color: #B99B5A; /* Color hover: Latón Viejo (Claro) */
-        }
-
-        .google-icon {
-            width: 18px;
-            height: 18px;
-            margin-left: 8px;
-            opacity: 0.8;
-        }
-
-        /* Indicadores de puntos */
-        .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #4b5563;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .dot.active {
-            background: #876A2E; /* Color del punto activo: Bronce Oscuro (Principal) */
-            transform: scale(1.2);
-        }
-
-        /* Mobile swipe gesture */
-        @media (max-width: 768px) {
-            .review-card {
-                min-width: 260px;
-                padding: 20px;
-            }
-            .review-text {
-                font-size: 0.8125rem;
-            }
-        }
-
-
-
-
-
-
-
-
-
-
     </style>
 </head>
-
-
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const faders = document.querySelectorAll(".fade-in-section");
-        const options = {
-            threshold: 0.2
-        };
-
-        const appearOnScroll = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, options);
-
-        faders.forEach(fader => {
-            appearOnScroll.observe(fader);
-        });
-    });
-</script>
-
-
-
-<body class="min-h-screen bg-gradient-to-b from-gray-950 via-black to-gray-900 ">
-    
-<nav id="navbar" class="absolute top-4 w-full z-50 transition-all duration-300 bg-transparent ">
-
-
-        
+<body class="min-h-screen bg-gradient-to-b from-gray-950 via-black to-gray-900">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                
                
                
-               <div class="flex-shrink-0 nav-logo ">
+               <!-- Logo (imagen) -->
+<div class="flex-shrink-0 nav-logo">
     <a href="index.html" class="block">
         <img 
             src="logoextendido.png" 
@@ -300,6 +116,7 @@
     </a>
 </div>
 
+                <!-- Desktop Navigation -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="index.html" class="nav-link text-yellow-500 px-3 py-2 text-sm font-medium">
@@ -321,6 +138,7 @@
                     </div>
                 </div>
 
+                <!-- Mobile menu button -->
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-gray-300 hover:text-yellow-500 p-2">
                         <svg id="menu-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -334,6 +152,7 @@
             </div>
         </div>
 
+        <!-- Mobile Navigation -->
         <div id="mobile-menu" class="md:hidden bg-black/95 backdrop-blur-md border-b border-yellow-500/20 hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="index.html" class="mobile-nav-link text-gray-300 hover:text-yellow-500 block px-3 py-2 text-base font-medium w-full text-left">
@@ -355,7 +174,9 @@
         </div>
     </nav>
 
-    <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden fade-in-section ">
+    <!-- Hero Section - INICIO -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
         <div class="absolute inset-0">
             <img
                 src="lawyer-header.jpg"
@@ -365,21 +186,22 @@
             />
             <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900/95 to-black opacity-90"></div>
             <div class="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-60"></div>
+            <!-- Fallback gradient if image doesn't load -->
             <div class="absolute inset-0 bg-gradient-to-br from-gray-950 via-black to-gray-900 hidden" style="display: none;"></div>
         </div>
-
+        
+        <!-- Background Pattern -->
         <div class="absolute inset-0 opacity-10">
             <div class="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-600/20 to-transparent"></div>
         </div>
         
-        <div class="relative z-10 text-center px-4 max-w-6xl mx-auto">       <br><br>
+        <div class="relative z-10 text-center px-4 max-w-6xl mx-auto">
             <div class="mb-8">
-    <h1 class="text-5xl md:text-7xl font-bold mb-4 gradient-text flex flex-col items-center space-y-1">
-        MURÚA
-        <span class="text-3xl md:text-4xl font-medium">~PENALISTAS~</span>
-    </h1>
-    <div class="w-32 h-1 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 mx-auto mb-8"></div>
-</div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 gradient-text">
+                    ESTUDIO MURÚA
+                </h1>
+                <div class="w-32 h-1 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 mx-auto mb-8"></div>
+            </div>
             
             <h2 class="text-2xl md:text-4xl text-white font-light mb-6">
                 Especialistas en Defensa Penal
@@ -423,7 +245,8 @@ comprometidos con la defensa penal activa, estratégica y personalizada.
         </div>
     </section>
 
-    <section id="sobre-nosotros" class="py-20 px-4 bg-gradient-to-b from-gray-900 to-black fade-in-section">
+    <!-- About Section - SOBRE NOSOTROS -->
+    <section id="sobre-nosotros" class="py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">
@@ -502,7 +325,8 @@ Todo ello con la dirección del titular del estudio.
         </div>
     </section>
 
-    <section id="servicios" class="py-20 px-4 bg-gradient-to-b from-black to-gray-900 fade-in-section">
+    <!-- Services Section - SERVICIOS -->
+    <section id="servicios" class="py-20 px-4 bg-gradient-to-b from-black to-gray-900">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">
@@ -548,7 +372,8 @@ Experiencia en todas las etapas.
         </div>
     </section>
 
-    <section id="contacto" class="py-20 px-4 bg-gradient-to-b from-gray-900 to-black fade-in-section">
+    <!-- Contact Section - CONTACTO -->
+    <section id="contacto" class="py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">
@@ -628,8 +453,10 @@ manera preliminar las posibles estrategias de defensa.
 
 
 
-<section id="google-reviews-carousel" class="py-16 px-4 bg-gradient-to-b from-gray-900 to-black fade-in-section">
+<!-- Google Reviews Carousel – Optimizado: Flechas solo en desktop, swipe en móvil, drag con mouse -->
+<section id="google-reviews-carousel" class="py-16 px-4 bg-gradient-to-b from-gray-900 to-black">
     <div class="max-w-6xl mx-auto">
+        <!-- Título -->
         <div class="text-center mb-8">
             <h2 class="text-xl font-semibold text-yellow-500 uppercase tracking-wide mb-2">OPINIONES</h2>
             <h3 class="text-3xl md:text-4xl font-bold gradient-text mb-4">
@@ -641,7 +468,9 @@ manera preliminar las posibles estrategias de defensa.
             <div class="w-24 h-1 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 mx-auto mt-4"></div>
         </div>
 
+        <!-- Slider Container -->
         <div class="relative mt-10">
+            <!-- Flechas de navegación (solo en desktop) -->
             <button id="prev-btn" class="hidden md:block absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 p-3 rounded-full text-white transition-all duration-300 shadow-lg">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -653,16 +482,21 @@ manera preliminar las posibles estrategias de defensa.
                 </svg>
             </button>
 
+            <!-- Contenedor de las tarjetas -->
             <div id="reviews-container" class="flex overflow-x-auto space-x-6 pb-6 scrollbar-hide scroll-smooth snap-x snap-mandatory relative">
-                </div>
+                <!-- Tarjetas se insertan dinámicamente con JS -->
+            </div>
 
+            <!-- Indicadores de puntos -->
             <div id="dots-container" class="flex justify-center mt-6 gap-2">
-                </div>
+                <!-- Se generan dinámicamente -->
+            </div>
         </div>
 
+        <!-- Botón ver todas en Google -->
         <div class="text-center mt-10">
             <a href="https://maps.app.goo.gl/BF9qnJ26JtwqHuQQ9" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-2 btn-gold px-6 py-3 text-black font-semibold rounded-lg inline-block text-center">
+               class="inline-flex items-center gap-2 btn-gold px-6 py-3 rounded-lg font-semibold">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                 </svg>
@@ -674,6 +508,139 @@ manera preliminar las posibles estrategias de defensa.
         </div>
     </div>
 </section>
+
+<style>
+    /* Ocultar scrollbar pero mantener scroll */
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Estilos para las tarjetas */
+    .review-card {
+        min-width: 300px;
+        max-width: 350px;
+        background: linear-gradient(145deg, #1f2937, #111827);
+        border: 1px solid rgba(234, 179, 8, 0.2);
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+        position: relative;
+        flex-shrink: 0;
+        snap-align: start;
+        cursor: grab;
+    }
+    .review-card:hover {
+        transform: translateY(-6px) scale(1.02);
+        border-color: rgba(234, 179, 8, 0.4);
+        box-shadow: 0 12px 30px rgba(234, 179, 8, 0.15);
+        z-index: 10;
+    }
+    .review-card:active {
+        cursor: grabbing;
+    }
+
+    .avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #fbbf24, #eab308);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+        margin-right: 12px;
+        flex-shrink: 0;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .review-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+
+    .review-name {
+        font-weight: bold;
+        color: white;
+        margin-right: 8px;
+    }
+
+    .review-date {
+        font-size: 0.75rem;
+        color: #9ca3af;
+    }
+
+    .stars {
+        color: #fbbf24;
+        font-size: 1rem;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+    }
+
+    .review-text {
+        color: #d1d5db;
+        line-height: 1.5;
+        font-size: 0.875rem;
+        margin-bottom: 12px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    .read-more {
+        color: #eab308;
+        font-size: 0.75rem;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: underline;
+        margin-top: 4px;
+        transition: color 0.2s ease;
+    }
+    .read-more:hover {
+        color: #fbbf24;
+    }
+
+    .google-icon {
+        width: 18px;
+        height: 18px;
+        margin-left: 8px;
+        opacity: 0.8;
+    }
+
+    /* Indicadores de puntos */
+    .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #4b5563;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .dot.active {
+        background: #eab308;
+        transform: scale(1.2);
+    }
+
+    /* Mobile swipe gesture */
+    @media (max-width: 768px) {
+        .review-card {
+            min-width: 260px;
+            padding: 20px;
+        }
+        .review-text {
+            font-size: 0.8125rem;
+        }
+    }
+</style>
 
 <script>
     // Datos reales extraídos de Google Maps (17/11/2025)
@@ -976,7 +943,8 @@ manera preliminar las posibles estrategias de defensa.
     </section>
 
 
-       <footer class="py-8 px-4 bg-black border-t border-yellow-500/20">
+       <!-- Footer -->
+    <footer class="py-8 px-4 bg-black border-t border-yellow-500/20">
         <div class="max-w-6xl mx-auto">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
@@ -1023,30 +991,16 @@ manera preliminar las posibles estrategias de defensa.
 
     <script>
         // Navbar scroll effect
-        document.addEventListener('DOMContentLoaded', function() {
-    const navbar = document.getElementById('navbar');
-    const scrollThreshold = 100; // Puedes ajustar este valor
-
-    function handleScroll() {
-        if (window.scrollY > scrollThreshold) {
-            // Se hace visible la barra negra y se fija arriba
-            navbar.classList.add('bg-black', 'fixed', 'top-0', 'py-4'); // Cambia a fixed y top-0
-            navbar.classList.remove('bg-transparent', 'absolute', 'top-4'); // Quita absolute y top-4
-        } else {
-            // Barra transparente
-            navbar.classList.remove('bg-black', 'fixed', 'top-0', 'py-4'); // Quita fixed y top-0
-            navbar.classList.add('bg-transparent', 'absolute', 'top-4'); // Vuelve a absolute y top-4
-        }
-    }
-
-    // Asegurarse de que el estado inicial sea `absolute` para no generar espacio
-    navbar.classList.remove('fixed');
-    navbar.classList.add('absolute');
-
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Ejecutar al cargar para establecer el estado correcto
-});
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-black/90', 'backdrop-blur-md', 'border-b', 'border-yellow-500/20');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-black/90', 'backdrop-blur-md', 'border-b', 'border-yellow-500/20');
+                navbar.classList.add('bg-transparent');
+            }
+        });
 
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -1085,9 +1039,6 @@ manera preliminar las posibles estrategias de defensa.
                 }
             });
         });
-
-
-        
     </script>
 </body>
 </html>

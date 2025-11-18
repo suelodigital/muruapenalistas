@@ -1,0 +1,91 @@
+        body {      font-family: "Times New Roman", Times, serif;
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.mapa-tuneado {
+    width: 100%;
+    /* 1. Invert(90%): Lo hace oscuro pero no 100% negro.
+      2. hue-rotate(180deg): Gira la paleta de colores (azules -> amarillos).
+      3. brightness(1.1) y contrast(1.1): Le da "vida" para que se lea.
+    */
+    filter: invert(90%) hue-rotate(180deg) brightness(1.1) contrast(1.1);
+}
+
+.h-96 {
+  height: 44rem !important; /* 👈 Cambia este valor según necesites */
+}
+
+/* Altura más pequeña en tablets y móviles */
+@media (max-width: 1024px) {
+  .h-96 {
+    height: 32rem !important; /* Ajusta este valor si necesitas más/menos */
+  }
+}
+
+/* Altura aún más pequeña en móviles pequeños */
+@media (max-width: 768px) {
+  .h-96 {
+    height: 24rem !important; /* Puedes probar 20rem, 22rem, etc. */
+  }
+}
+
+
+
+
+.nav-logo {margin-top: 0px;}
+
+.nav-logo img:hover {
+  filter: brightness(1.1) contrast(1.05);
+  transition: filter 0.2s ease;
+}
+
+
+
+/* Ajuste fino para el logo en el navbar */
+@media (max-width: 768px) {
+  .nav-logo img {    height: 45px !important;margin-top: -3px;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-logo img {
+    height: 65px !important;
+  }
+}
+
+
+
+
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    will-change: opacity, transform;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: none;
+}
+
+
+
+
+
+
+
